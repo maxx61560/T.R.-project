@@ -1,0 +1,199 @@
+/* Code made by Max Vilà Ruiz */
+
+
+
+/* GLOBAL PART: */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    }
+body{
+    background-color: var(--background-color);
+}
+:root{
+    --gray: rgb(150, 148, 148);
+    --blue: rgb(75, 155, 245);
+    --border-input: rgba(196, 193, 193, 0.9);
+    --background-color: rgba(240, 240, 240, 0.850);
+    --primary-font: 'Sora', sans-serif;
+}
+
+
+
+/* IMAGES: */
+
+/* Start Page: */
+.img_background{
+    width: 90rem;
+}
+/* Content Page: */
+.img_buttonGroup_event{
+    width: 2rem;
+    height: 2rem;
+}
+
+
+
+/* TEXTS: */
+
+/* Global: */
+h1{
+    font-size: 5rem;
+    font-weight: 600;
+    text-align: center;
+}
+h2{
+    font-size: 2.5rem;
+    font-weight: 300;
+    font-style: oblique;
+    text-align: center;
+    color: var(--gray);
+}
+p{
+    text-align: center;
+    font-family: var(--primary-font);
+}
+.titles{
+    background-color: var(--background-color);
+    padding-bottom: 1.5rem;
+    padding-top: 1.5rem;
+    font-family: 'Patua One', cursive;
+}
+.description{
+    padding-bottom: .9rem;
+    padding-top: .9rem;
+    background-color: white;
+}
+
+
+
+/* FORMS: */ 
+
+/* Log in: */
+.form_login{
+    margin-top: 10rem;
+    display: grid;
+    justify-content: center;
+}
+/* Register: */
+.form_register{
+    margin-top: 6.5rem;
+    display: grid;
+    justify-content: center;
+}
+
+
+
+/* ADDRESSES: */
+
+/* Start Page: */
+.aGroup_startPage{
+    display: grid;
+    justify-content: center;
+    margin-top: 9rem;
+}
+.a_startPage{
+    font-size: 1.5rem;
+    padding: 1.25rem 6rem;
+    margin-top: .75rem;
+    text-decoration: none;
+    border-radius: 1.25rem;
+    color: black;
+    background-color: var(--blue);
+    border: solid 1px black;
+    font-family: var(--primary-font);
+}
+.a_startPage:hover{
+    scale: 1.1;
+    transition: .25s;
+    background-color: var(--blue);
+    border: solid 2px black;
+}
+/* Content Page: */
+.a_seeMore_contentPage{
+    text-decoration: none;
+    color: var(--blue);
+}
+.a_seeMore_contentPage:hover{
+    transition: 0.3s;
+    text-decoration: underline;
+}
+
+
+
+/* INPUTS: */
+
+/* Global: */
+input{
+    border: solid 1px var(--border-input);
+}
+input::placeholder{
+    padding-left: .5rem;
+    font-family: var(--primary-font);
+    font-size: 1.5rem;
+    color: var(--gray);
+}
+/* Log in and Register: */
+.input_LogReg{
+    margin-bottom: 1rem;
+    font-size: 2rem;
+}
+
+
+
+/* BUTTONS: */
+
+/* Global: */
+button{
+    background-color: var(--blue);
+    border: solid 1px black;
+    cursor: pointer;
+}
+/* Log in and Register: */
+.button_LogReg{
+    font-size: 2rem;
+    padding: 0.5rem;
+}
+.button_LogReg:hover{
+    transition: 0.05s;
+    border: solid 2px black;
+}
+/* Content Page: */
+.buttonGroup_eventContentPage{
+    border: none;
+    margin-right: 3rem
+}
+
+
+
+/* LABELS: */
+/* Content Page: */
+.label_eventContentPage{
+    display: flex;
+    margin-top: 3.5rem;
+    padding: 1rem;
+    background-color: white;
+    border: solid 1px var(--border-input);
+}
+.event_initialPosition{
+    margin-left: 15rem; /* Try to change it and put the initial posicion in '.event' */
+}
+.event_elem{
+    display: grid;
+    place-items: center;
+    margin-right: 3rem;
+    font-family: var(--primary-font);
+}
+.event_difficulty{
+    padding: 0.5rem 1rem;
+    margin-right: 3rem;
+    border: solid 2px black;
+    background-color: red;
+}
+.event_name{
+    font-weight: 800;
+}
+.event_date{
+    font-style: oblique;
+}

@@ -1,0 +1,53 @@
+<!-- Code made by Max Vilà Ruiz -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar Sessió</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300&display=swap" rel="stylesheet"> <!-- Font for texts -->
+    <link href="https://fonts.googleapis.com/css2?family=Patua+One&display=swap" rel="stylesheet"> <!-- Font for titles -->
+
+    <link rel="stylesheet" href="Style.css"> <!-- CSS document -->
+</head>
+
+<body>
+    <div class="titles">
+        <h1>Iniciar Sessió</h1>
+    </div>
+    <p class="description">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolor earum et debitis obcaecati similique nemo voluptatem explicabo, unde sint quia?</p> <!-- Description about what to do to log in -->
+
+    <form class="form_login"> <!-- 'Log in' form -->
+        <input class="input_LogReg" placeholder="Correu electrònic" type="text" id="email">
+        <input class="input_LogReg" placeholder="Contrasenya" type="password" id="password">
+
+        <button class="button_LogReg" onclick="login()">Iniciar Sessió</button>
+    </form>
+
+
+    <!-- <script src="DataBase.js"></script> -->
+    <script> // JavaScript part:
+        const database = [['maxvilaruiz123@gmail.com', 'Exemple', 'Max']];
+        let verify = true;
+        const login = () => {
+            let email = document.querySelector('#email');
+            let password = document.querySelector('#password');
+            for(let i = 0; i < database.length; i++){
+                if(email.value === database[i][0] & password.value === database[i][1]){
+                    alert(`Benvingut/da ${database[i][2]}.`); //Idea: instead of show an alert message, open the content page of the user with a personal welcome title.
+                    verify = false;
+                    break;
+                }
+            }
+            if(verify){
+                alert("El correu electrònic o la contrasenya no són correctes. Si us plau, torna-ho a intentar.")
+            }
+        }
+    </script>
+
+</body>
+</html>
