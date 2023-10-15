@@ -15,18 +15,24 @@
     <link rel="stylesheet" href="Style.css"> <!-- CSS document -->
 </head>
 
-<body>
-    <div class="titles">
-        <h1>Iniciar Sessió</h1>
-    </div>
-    <p class="description">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolor earum et debitis obcaecati similique nemo voluptatem explicabo, unde sint quia?</p> <!-- Description about what to do to log in -->
+<body class="body">
+    <header class="header">
+        <div name="Background Header Imatge" class="header_backGroundImg">
+            <div class="titles">
+                <h1>Iniciar Sessió</h1>
+            </div>
+            <p class="description">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolor earum et debitis obcaecati similique nemo voluptatem explicabo, unde sint quia?</p> <!-- Description about what to do to log in -->
+        </div>
+    </header>
 
-    <form class="form_login"> <!-- 'Log in' form -->
-        <input class="input_LogReg" placeholder="Correu electrònic" type="text" id="email">
-        <input class="input_LogReg" placeholder="Contrasenya" type="password" id="password">
+    <main>
+        <form class="form_login"> <!-- 'Log in' form -->
+            <input class="input_LogReg" placeholder="Correu electrònic" type="text" id="email">
+            <input class="input_LogReg" placeholder="Contrasenya" type="password" id="password">
 
-        <button class="button_LogReg" onclick="login()">Iniciar Sessió</button>
-    </form>
+            <button class="button button_LogReg" onclick="login()">Iniciar Sessió</button>
+        </form>
+    </main>
 
 
     <!-- <script src="DataBase.js"></script> -->

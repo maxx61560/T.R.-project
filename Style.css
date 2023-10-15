@@ -8,24 +8,43 @@
     padding: 0;
     box-sizing: border-box;
     }
-body{
-    background-color: var(--background-color);
-}
 :root{
     --gray: rgb(150, 148, 148);
     --blue: rgb(75, 155, 245);
     --border-input: rgba(196, 193, 193, 0.9);
     --background-color: rgba(240, 240, 240, 0.850);
+    --background-color_Header: rgba(240, 240, 240, 0.8);
+    --background-color_mainImg: rgba(240, 240, 240, 0.475);
     --primary-font: 'Sora', sans-serif;
 }
 
 
 
-/* IMAGES: */
+/* BACKGROUNDS & IMAGES: */
 
+/* Global Part: */
+.body{
+    background-color: var(--background-color);
+}
+.header{
+    background-image: url(../img/calendar-background.jpeg); /* Add background-header img */
+    background-size: cover;
+    position: relative;
+}
+.header_backGroundImg{
+    background-color: var(--background-color_Header);
+}
 /* Start Page: */
-.img_background{
-    width: 90rem;
+.body_startPage{
+    background-image: url(../img/calendar-background.jpeg);
+    background-size: cover;
+    position: relative;
+}
+.header_startPage{
+    background-color: var(--background-color_Header);
+}
+.main_startPage{
+    background-color: var(--background-color_mainImg);
 }
 /* Content Page: */
 .img_buttonGroup_event{
@@ -51,19 +70,36 @@ h2{
     color: var(--gray);
 }
 p{
-    text-align: center;
     font-family: var(--primary-font);
 }
 .titles{
-    background-color: var(--background-color);
     padding-bottom: 1.5rem;
     padding-top: 1.5rem;
     font-family: 'Patua One', cursive;
 }
 .description{
+    text-align: center;
     padding-bottom: .9rem;
     padding-top: .9rem;
     background-color: white;
+}
+/* Content Page: */
+.event_name{
+    font-weight: 800;
+}
+.event_date{
+    font-style: oblique;
+}
+/* Event Page: */
+.event_contents{
+    font-weight: 600;
+    margin-right: 2rem;
+}
+.event_title{
+    font-family: none;
+    font-weight: 600;
+    font-size: 2.5rem;
+    text-decoration: underline;
 }
 
 
@@ -91,12 +127,13 @@ p{
 .aGroup_startPage{
     display: grid;
     justify-content: center;
-    margin-top: 9rem;
+    padding-top: 9rem;
+    padding-bottom: 10rem;
+    gap: .75rem;
 }
 .a_startPage{
     font-size: 1.5rem;
     padding: 1.25rem 6rem;
-    margin-top: .75rem;
     text-decoration: none;
     border-radius: 1.25rem;
     color: black;
@@ -105,8 +142,8 @@ p{
     font-family: var(--primary-font);
 }
 .a_startPage:hover{
-    scale: 1.1;
     transition: .25s;
+    scale: 1.1;
     background-color: var(--blue);
     border: solid 2px black;
 }
@@ -116,8 +153,26 @@ p{
     color: var(--blue);
 }
 .a_seeMore_contentPage:hover{
-    transition: 0.3s;
     text-decoration: underline;
+}
+/* Event Page: */
+.nav_eventPage{
+    display: flex;
+    font-family: var(--primary-font);
+    margin-left: 26rem;
+    gap: 10rem;
+}
+.nav_elem{
+    font-size: 1rem;
+    border: none;
+    text-decoration: none;
+    cursor: pointer;
+    background-color: white;
+    color: var(--gray);
+}
+.nav_elem:hover{
+    color: var(--blue);
+    font-weight: 600;
 }
 
 
@@ -145,9 +200,13 @@ input::placeholder{
 /* BUTTONS: */
 
 /* Global: */
-button{
+.button{
     background-color: var(--blue);
     border: solid 1px black;
+}
+.button:hover{
+    transition: 0.05s;
+    border: solid 2px black;
     cursor: pointer;
 }
 /* Log in and Register: */
@@ -155,19 +214,46 @@ button{
     font-size: 2rem;
     padding: 0.5rem;
 }
-.button_LogReg:hover{
-    transition: 0.05s;
-    border: solid 2px black;
-}
 /* Content Page: */
-.buttonGroup_eventContentPage{
-    border: none;
+.buttonGroup_contentPage{
     margin-right: 3rem
+}
+.button_done{
+    border: solid 2px var(--background-color);
+}
+.button_delete_contentPage{
+    border: none;
+}
+/* Event Page: */
+.buttonGroup_eventPage{
+    display: flex;
+    margin-left: 10rem;
+    margin-top: 4rem;
+    font-family: var(--primary-font);
+    gap: 3rem;
+}
+.button_edit{
+    font-size: 1.5rem;
+    padding: 0.5rem;
+    border-radius: .25rem;
+}
+.button_delete_eventPage{
+    font-size: 1.5rem;
+    padding: 0.5rem;
+    background-color: var(--background-color);
+    border: solid 1px var(--gray);
+    border-radius: .25rem;
+}
+.button_delete_eventPage:hover{
+    transition: 0.05s;
+    border: solid 2px var(--gray);
+    cursor: pointer;
 }
 
 
 
 /* LABELS: */
+
 /* Content Page: */
 .label_eventContentPage{
     display: flex;
@@ -191,9 +277,17 @@ button{
     border: solid 2px black;
     background-color: red;
 }
-.event_name{
-    font-weight: 800;
+/* Event Page: */
+.label_eventPage{
+    display: block;
+    margin-top: 3rem;
+    margin-left: 10rem;
+    margin-right: 10rem;
+    font-family: var(--primary-font);
+} 
+.elem_eventPage{
+    margin-bottom: 2rem;
 }
-.event_date{
-    font-style: oblique;
+.elem_small{
+    display: flex;
 }

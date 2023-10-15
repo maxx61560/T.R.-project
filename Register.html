@@ -16,20 +16,26 @@
 
 </head>
 
-<body>
-    <div class="titles">
-        <h1>Registrar-se</h1>
-    </div>
-    <p class="description">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolor earum et debitis obcaecati similique nemo voluptatem explicabo, unde sint quia?</p> <!-- Description about what to do to register -->
+<body class="body">
+    <header class="header">
+        <div name="Background Header Imatge" class="header_backGroundImg">
+            <div class="titles">
+                <h1>Registrar-se</h1>
+            </div>
+            <p class="description">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolor earum et debitis obcaecati similique nemo voluptatem explicabo, unde sint quia?</p> <!-- Description about what to do to register -->
+        </div>
+    </header>
 
-    <form class="form_register"> <!-- 'Register' form -->
-        <input class="input_LogReg" placeholder="Nom" type="text" id="name">
-        <input class="input_LogReg" placeholder="Correu electrònic" type="text" id="email">
-        <input class="input_LogReg" placeholder="Contrasenya" type="password" id="password">
-        <input class="input_LogReg" placeholder="Repeteix la contrasenya" type="password" id="password2">
+    <main>
+        <form class="form_register"> <!-- 'Register' form -->
+            <input class="input_LogReg" placeholder="Nom" type="text" id="name">
+            <input class="input_LogReg" placeholder="Correu electrònic" type="text" id="email">
+            <input class="input_LogReg" placeholder="Contrasenya" type="password" id="password">
+            <input class="input_LogReg" placeholder="Repeteix la contrasenya" type="password" id="password2">
 
-        <button class="button_LogReg" onclick="register()">Registrar-se</button>
-    </form>
+            <button class="button button_LogReg" onclick="register()">Registrar-se</button>
+        </form>
+    </main>
 
 
     <!-- <script src="DataBase.js"></script> -->

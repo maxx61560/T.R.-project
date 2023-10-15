@@ -15,38 +15,44 @@
     <link rel="stylesheet" href="Style.css"> <!-- CSS document -->
 </head>
 
-<body>
-    <div class="titles">
-        <h1>Benvingut/da X</h1>
-    </div>
-    <p class="description">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolor earum et debitis obcaecati similique nemo voluptatem explicabo, unde sint quia?</p>
+<body class="body">
+    <header class="header">
+        <div name="Background Header Imatge" class="header_backGroundImg">
+            <div class="titles">
+                <h1>Benvingut/da X</h1>
+            </div>
+            <p class="description">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolor earum et debitis obcaecati similique nemo voluptatem explicabo, unde sint quia?</p>
+        </div>
+    </header>
 
-    <label class="label_eventContentPage">
-        <div class="event_initialPosition"></div> <!-- Is useful to determine the initial position of all the elements of the event. -->
+    <main>
+        <label class="label_eventContentPage">
+            <div class="event_initialPosition"></div> <!-- Is useful to determine the initial position of all the elements of the event. -->
 
-        <div class="event_difficulty"></div> <!-- <p class="event_difficulty_name">Dificil, Normal o Fàcil</p> Better alternative: see the grade of the difficulty when you put the mourse on de color -->
+            <div class="event_difficulty"></div> <!-- <p class="event_difficulty_name">Dificil, Normal o Fàcil</p> Better alternative: see the grade of the difficulty when you put the mourse on de color -->
 
-        <p class="event_elem event_name">Nom de l'esdeveniment</p>
+            <p class="event_elem event_name">Nom de l'esdeveniment</p>
 
-        <div class="event_elem">
+            <div name="Due Date" class="event_elem">
             <!-- <p class="event_date_type">Diari, Setmanal, Mensual, Trimestral, Semestral o Anual</p> To choose (target type) -->
-            <p class="event_dateTxt">Data de venciment:</p>
-            <p class="event_date">xx/xx/xxxx</p>
-        </div>
+                <p class="event_dateTxt">Data de venciment:</p>
+                <p class="event_date">dd/mm/aaaa</p>
+            </div>
 
-        <a href="EventPage.html" class="event_elem a_seeMore_contentPage">Veure més</a> <!-- Better alternative: you can click the whole event to see more information about it -->
+            <a href="EventPage.html" class="event_elem a_seeMore_contentPage">Veure més</a> <!-- Better alternative: you can click the whole event to see more information about it -->
 
-        <div class="event_initialPosition"></div> 
+            <div class="event_initialPosition"></div> <!-- Is useful to determine the initial position of all the elements of the event. -->
 
-        <div name="Button Group">
-            <button class="buttonGroup_eventContentPage button.done" name="Done" onclick="">
-                <img src="img/tick.jpeg" class="img_buttonGroup_event">
-            </button>
-            <button class="buttonGroup_eventContentPage button.delete" name="Delete" onclick="">
-                <img src="img/bin.jpeg" class="img_buttonGroup_event">
-            </button>
-        </div>
-    </label>
+            <div name="Button Group">
+                <button class="button buttonGroup_contentPage button_done" name="Done" onclick="">
+                    <img src="img/tick.jpeg" class="img_buttonGroup_event">
+                </button>
+                <button class="button buttonGroup_contentPage button_delete_contentPage" name="Delete" onclick="">
+                    <img src="img/bin.jpeg" class="img_buttonGroup_event">
+                </button>
+            </div>
+        </label>
+    </main>
 
 </body>
 </html>

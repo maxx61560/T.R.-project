@@ -1,3 +1,4 @@
+<!-- Code made by Max Vilà Ruiz -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,14 +14,48 @@
 
     <link rel="stylesheet" href="Style.css"> <!-- CSS document -->
 </head>
-<body>
-    <div class="titles">
-        <h1>Nom del event</h1>
-    </div>
-    <p class="description">
-        <a href="ContentPage.html">Pàgina d'inici</a>
-        <button>Editar event</button>
-        <button>Esborrar event</button>
-    </p>
+
+<body class="body">
+    <header class="header">
+        <div name="Background Header Imatge" class="header_backGroundImg">
+            <div class="titles">
+                <h1>Títol de la pàgina</h1>
+            </div>
+            <div class="description">
+                <nav class="nav_eventPage">
+                    <a class="nav_elem" href="ContentPage.html">Pàgina d'inici</a>
+                    <button class="nav_elem">Editar event</button>
+                    <button class="nav_elem">Esborrar event</button>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <label class="label_eventPage">
+            <p class="elem_eventPage event_title">Nom del event</p>
+
+            <div name="Description" class="elem_eventPage">
+                <p class="event_contents">Descripció:</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt maiores, temporibus culpa labore sint quis, consequatur saepe inventore vero odit eos nulla quasi vitae error impedit delectus. Voluptatum, porro nobis?</p>
+            </div>
+
+            <div name="Due Date" class="elem_eventPage elem_small">
+                <p class="event_contents">Data de venciment:</p>
+                <p class="event_date">dd/mm/aaaa</p>
+            </div>
+
+            <div name="Difficulty" class="elem_eventPage elem_small">
+                <p class="event_contents">Grau de dificultat:</p>
+                <!-- Here is suppose to be the color of the difficulty degree -->
+            </div>
+        </label>
+
+        <div name="Buttons" class="buttonGroup_eventPage">
+            <button class="button_delete_eventPage">Eliminar</button>
+            <button class="button button_edit">Editar</button>
+        </div>
+    </main>
+
 </body>
 </html>
