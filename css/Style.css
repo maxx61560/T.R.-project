@@ -27,7 +27,7 @@
     background-color: var(--background-color);
 }
 .header{
-    background-image: url(../img/calendar-background.jpeg); /* Add background-header img */
+    background-image: url(../img/prueva.jpg); /* Add background-header img */
     background-size: cover;
     position: relative;
 }
@@ -36,7 +36,7 @@
 }
 /* Start Page: */
 .body_startPage{
-    background-image: url(../img/calendar-background.jpeg);
+    background-image: url(../img/prueva.jpg);
     background-size: cover;
     position: relative;
 }
@@ -202,6 +202,7 @@ p{
 /* Global: */
 input{
     border: solid 1px var(--border-input);
+    font-family: var(--primary-font);
 }
 input::placeholder{
     padding-left: .5rem;
@@ -235,7 +236,8 @@ input::placeholder{
 }
 /* Content Page: */
 .buttonGroup_contentPage{
-    margin-right: 3rem
+    margin-right: 3rem;
+    background-color: white;
 }
 .button_done{
     border: solid 2px var(--background-color);

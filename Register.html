@@ -1,6 +1,7 @@
 <!-- Code made by Max Vilà Ruiz -->
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,11 +9,13 @@
     <title>Registrar-se</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
-    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300&display=swap" rel="stylesheet"> <!-- Font for texts -->
-    <link href="https://fonts.googleapis.com/css2?family=Patua+One&display=swap" rel="stylesheet"> <!-- Font for titles -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300&display=swap" rel="stylesheet">
+    <!-- Font for texts -->
+    <link href="https://fonts.googleapis.com/css2?family=Patua+One&display=swap" rel="stylesheet">
+    <!-- Font for titles -->
 
-    <link rel="stylesheet" href="Style.css"> <!-- CSS document -->
+    <link rel="stylesheet" href="/css/Style.css"> <!-- CSS document -->
 
 </head>
 
@@ -22,7 +25,9 @@
             <div class="titles">
                 <h1>Registrar-se</h1>
             </div>
-            <p class="description">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolor earum et debitis obcaecati similique nemo voluptatem explicabo, unde sint quia?</p> <!-- Description about what to do to register -->
+            <p class="description">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolor earum et debitis
+                obcaecati similique nemo voluptatem explicabo, unde sint quia?</p>
+            <!-- Description about what to do to register -->
         </div>
     </header>
 
@@ -33,7 +38,7 @@
             <input class="input_LogReg" placeholder="Contrasenya" type="password" id="password">
             <input class="input_LogReg" placeholder="Repeteix la contrasenya" type="password" id="password2">
 
-            <button class="button button_LogReg" onclick="register()">Registrar-se</button>
+            <button id="submit" class="button button_LogReg">Registrar-se</button>
 
             <div class="formLogReg_other">
                 <p>Ja tens un compte?</p>
@@ -43,35 +48,7 @@
     </main>
 
 
-    <!-- <script src="DataBase.js"></script> -->
-    <script> // JavaScript part:
-        const database = [['maxvilaruiz123@gmail.com', 'Exemple', 'Max']];
-        let verify_email = false;
-        let verify_pw = false;
-        const register = () => {
-            let name = document.querySelector('#name');
-            let email = document.querySelector('#email');
-            let password = document.querySelector('#password');
-            let password2 = document.querySelector('#password2');
-            let result = `, ['${email.value}', '${password.value}', '${name.value}']`;
-            for(let i = 0; i < database.length; i++){
-                if(email.value !== database[i][0]){
-                    if(password.value === password2.value){
-                        alert(`Perfecte! Per acabar, envia la següent informació al correu electrònic 'maxvilaruiz123@gmail.com': \n\n${result}`);
-                    } else{
-                        verify_pw = true;
-                    }
-                } else{
-                    verify_email = true;
-                }
-            }
-            if(verify_email){
-                alert("Aquest correu electrònic ja està en ús, si us plau prova amb un altre.");
-            } else if(verify_pw){
-                alert('Les contrasenyes no coincideixen, si us plau torna-ho a intentar.');
-            }
-        }
-    </script>
-
+    <script src="/js/Register.js"></script> <!-- JavaScript document (for internal 'Register' functions) -->
 </body>
+
 </html>
