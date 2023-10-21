@@ -6,11 +6,11 @@ const database = [['maxvilaruiz123@gmail.com', 'Exemple', 'Max']];
 
 //Register code:
 const submit = document.querySelector('#submit');
-let verify_email = false;
-let verify_pw = false;
 
 submit.addEventListener('click', function (e) {
     e.preventDefault();
+    let verify_email = false;
+    let verify_pw = false;
     let name = document.querySelector('#name');
     let email = document.querySelector('#email');
     let password = document.querySelector('#password');
@@ -20,7 +20,7 @@ submit.addEventListener('click', function (e) {
         if(email.value !== database[i][0]){
             if(password.value === password2.value){
                 alert(`Perfecte! Per acabar, envia la següent informació al correu electrònic 'maxvilaruiz123@gmail.com': \n\n${result}`);
-                localStorage.setItem('name', name.value); //To put the name of the user in the 'Home' welcome.
+                localStorage.setItem('user_name', name.value); //To put the name of the user in the 'Home' welcome.
                 window.location.href = 'Home.html';
                 break;
             } else{

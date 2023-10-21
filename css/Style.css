@@ -13,7 +13,7 @@
     --blue: rgb(75, 155, 245);
     --border-input: rgba(196, 193, 193, 0.9);
     --background-color: rgba(240, 240, 240, 0.850);
-    --background-color_Header: rgba(240, 240, 240, 0.8);
+    --background-color_header: rgba(240, 240, 240, 0.8);
     --background-color_mainImg: rgba(240, 240, 240, 0.475);
     --primary-font: 'Sora', sans-serif;
 }
@@ -32,21 +32,21 @@
     position: relative;
 }
 .header_backGroundImg{
-    background-color: var(--background-color_Header);
+    background-color: var(--background-color_header);
 }
-/* Start Page: */
-.body_startPage{
+/* Index: */
+.body_index{
     background-image: url(../img/prueva.jpg);
     background-size: cover;
     position: relative;
 }
-.header_startPage{
-    background-color: var(--background-color_Header);
+.header_index{
+    background-color: var(--background-color_header);
 }
-.main_startPage{
+.main_index{
     background-color: var(--background-color_mainImg);
 }
-/* Content Page: */
+/* Home: */
 .img_buttonGroup_event{
     width: 2rem;
     height: 2rem;
@@ -83,7 +83,7 @@ p{
     padding-top: .9rem;
     background-color: white;
 }
-/* Content Page: */
+/* Home: */
 .event_name{
     font-weight: 800;
 }
@@ -143,15 +143,15 @@ p{
     cursor: pointer;
     text-decoration: underline;
 }
-/* Start Page: */
-.aGroup_startPage{
+/* Index: */
+.aGroup_index{
     display: grid;
     justify-content: center;
     padding-top: 9rem;
     padding-bottom: 10rem;
     gap: .75rem;
 }
-.a_startPage{
+.a_index{
     font-size: 1.5rem;
     padding: 1.25rem 6rem;
     text-decoration: none;
@@ -161,18 +161,18 @@ p{
     border: solid 1px black;
     font-family: var(--primary-font);
 }
-.a_startPage:hover{
+.a_index:hover{
     transition: .25s;
     scale: 1.1;
     background-color: var(--blue);
     border: solid 2px black;
 }
-/* Content Page: */
-.a_seeMore_contentPage{
+/* Home: */
+.a_seeMore_home{
     text-decoration: none;
     color: var(--blue);
 }
-.a_seeMore_contentPage:hover{
+.a_seeMore_home:hover{
     text-decoration: underline;
 }
 /* Event Page: */
@@ -234,15 +234,15 @@ input::placeholder{
     font-size: 2rem;
     padding: 0.5rem;
 }
-/* Content Page: */
-.buttonGroup_contentPage{
+/* Home: */
+.buttonGroup_home{
     margin-right: 3rem;
     background-color: white;
 }
 .button_done{
     border: solid 2px var(--background-color);
 }
-.button_delete_contentPage{
+.button_delete_home{
     border: none;
 }
 /* Event Page: */
@@ -275,8 +275,8 @@ input::placeholder{
 
 /* LABELS: */
 
-/* Content Page: */
-.label_eventContentPage{
+/* Home: */
+.label_eventHome{
     display: flex;
     margin-top: 3.5rem;
     padding: 1rem;

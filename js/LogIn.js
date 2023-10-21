@@ -1,7 +1,7 @@
 // Code made by Max Vilà Ruiz
 
 //Database:
-const database = [['maxvilaruiz123@gmail.com', 'Exemple', 'Max']];
+const database = [['maxvilaruiz123@gmail.com', 'Example', 'Max']];
 
 
 //Log in code:
@@ -14,7 +14,7 @@ submit.addEventListener('click', function (e) {
     let password = document.querySelector('#password');
     for (let i = 0; i < database.length; i++) {
         if (email.value === database[i][0] & password.value === database[i][1]) {
-            localStorage.setItem('name', database[i][2]); //To put the name of the user in the 'Home' welcome.
+            localStorage.setItem('user_name', database[i][2]); //To put the name of the user in the 'Home' welcome.
             window.location.href = 'Home.html';
             verify = false;
             break;
