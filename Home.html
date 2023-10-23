@@ -30,63 +30,31 @@
     </header>
 
     <main>
-        <div class="label_eventHome">
-            <div class="event_initialPosition"></div>
-            <!-- Is useful to determine the initial position of all the elements of the event. -->
+        <table class="table" id="table">
+            <thead>
+                <div>
+                    <th class="table_Default">Grau de dificultat</th>
+                    <th class="table_Default">Nom de l'esdeveniment</th>
+                    <th class="table_Default">Data de venciment</th>
+                    <th class="table_Default">Opcions</th>
+                </div>
+            </thead>
+            <tbody>
 
-            <div class="event_difficulty"></div>
-            <!-- <p class="event_difficulty_name">Dificil, Normal o Fàcil</p> Better alternative: see the grade of the difficulty when you put the mourse on de color -->
+            </tbody>
+        </table>
 
-            <p class="event_elem event_name">Nom de l'esdeveniment</p>
+        <button class="button_addEvent button">+</button>
 
-            <div name="Due Date" class="event_elem">
-                <!-- <p class="event_date_type">Diari, Setmanal, Mensual, Trimestral, Semestral o Anual</p> To choose (target type) -->
-                <p class="event_dateTxt">Data de venciment:</p>
-                <p class="event_date">dd/mm/aaaa</p>
-            </div>
-
-            <a href="EventPage.html" class="event_elem a_seeMore_home">Veure més</a>
-            <!-- Better alternative: you can click the whole event to see more information about it -->
-
-            <div class="event_initialPosition"></div>
-            <!-- Is useful to determine the initial position of all the elements of the event. -->
-
-            <div name="Button Group">
-                <button class="button buttonGroup_home button_done" name="Done" onclick="">
-                    <img src="img/tick.jpeg" class="img_buttonGroup_event">
-                </button>
-                <button class="button buttonGroup_home button_delete_home" name="Delete" onclick="">
-                    <img src="img/bin.jpeg" class="img_buttonGroup_event">
-                </button>
-            </div>
-        </div>
-
-
-        <form onsubmit="event.preventDefault();onSubmit();" autocomplete="off">
-            <div class="caja">
+        <form  class="form" onsubmit="event.preventDefault(); onSubmit();" autocomplete="off">
+            <div class="box">
+                <label for="difficulty">Grau de dificultat</label> <input type="text" id="difficulty" placeholder="Escriu aquí" required>
                 <label for="name">Nom de l'esdeveniment</label> <input type="text" id="name" placeholder="Escriu aquí" required>
                 <label for="date">Data de venciment</label> <input type="text" id="date" placeholder="Escriu aquí" required>
-                <label for="difficulty">Grau de dificultat</label> <input type="text" id="difficulty" placeholder="Escriu aquí" required>
             </div>
             <input class="submit" type="submit" value="Crear">
         </form>
 
-
-        <div class="board">
-            <table class="board_child" id="board">
-                <thead>
-                    <tr>
-                        <th>Nom de l'esdeveniment</th>
-                        <th>Data de venciment</th>
-                        <th>Grau de dificultat</th>
-                        <th>Opcions</th>
-                    </tr>
-                </thead>
-                <tbody>
-
-                </tbody>
-            </table>
-        </div>
     </main>
 
     <script src="js/Home.js"></script> <!-- JavaScript document (for internal 'Home' functions) -->
