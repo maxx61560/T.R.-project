@@ -20,6 +20,11 @@ defaultEvent["name"] = "Exemple d'esdeveniment";
 defaultEvent["date"] = "dd/mm/aaaa";
 InsertData(defaultEvent);
 
+//Button to show the form to create event:
+function show_formNewEvent() {
+    document.getElementById('button_createEvent').style.display = 'block';
+}
+
 // To create events:
 var Row = null
 function onSubmit() {
@@ -44,8 +49,8 @@ function InsertData(data) {
     column1 = Row.insertCell(0).innerHTML = data.difficulty;
     column2 = Row.insertCell(1).innerHTML = data.name;
     column3 = Row.insertCell(2).innerHTML = data.date;
-    column3 = Row.insertCell(3).innerHTML = `<input class="submit optionsTable_home edit_home" type="button" onClick="Edit(this)" value="Edit" >
-                                            <input class="submit optionsTable_home delete_home" type="button" onClick="Delete(this)" value="Delete" >`;
+    column3 = Row.insertCell(3).innerHTML = `<input class="submit optionsTable_home edit_home" onClick="Edit(this)" type="image" src="/img/edit.jpg">
+                                            <input class="submit optionsTable_home delete_home" onClick="Delete(this)" type="image" src="/img/delete.jpg">`;
     document.getElementById("difficulty").focus();
     Empty();
 }

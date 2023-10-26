@@ -241,10 +241,23 @@ input::placeholder{
     background-color: var(--blue);
     border: 1px solid black;
 }
+.formContent{
+    display: none;
+}
 .button_addEvent:hover{
     font-size: 3.5rem;
     width: 4rem;
     height: 4rem;
+}
+.optionsTable_home{
+    margin-right: 1.5rem;
+    width: 2rem;
+    height: 5rem;
+    border: none;
+}
+.optionsTable_home:hover{
+    transition: .5s;
+    font-size: 1.5rem;
 }
 /* Old Home-Page: */
 .buttonGroup_home{

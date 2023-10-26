@@ -10,10 +10,8 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300&display=swap" rel="stylesheet">
-    <!-- Font for texts -->
-    <link href="https://fonts.googleapis.com/css2?family=Patua+One&display=swap" rel="stylesheet">
-    <!-- Font for titles -->
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300&display=swap" rel="stylesheet"> <!-- Font for texts -->
+    <link href="https://fonts.googleapis.com/css2?family=Patua+One&display=swap" rel="stylesheet"> <!-- Font for titles -->
 
     <link rel="stylesheet" href="/css/Style.css">
 </head>
@@ -30,6 +28,7 @@
     </header>
 
     <main>
+        <!-- Main table: -->
         <table class="table" id="table">
             <thead>
                 <div>
@@ -44,8 +43,12 @@
             </tbody>
         </table>
 
-        <button class="button_addEvent button">+</button>
+        <button class="button_addEvent button" id="button_createEvent" onclick="show_formNewEvent()">+</button> <!-- Button for create an event -->
+        <div class="formContent">
+            
+        </div>
 
+        <!-- To add more events: -->
         <form  class="form" onsubmit="event.preventDefault(); onSubmit();" autocomplete="off">
             <div class="box">
                 <label for="difficulty">Grau de dificultat</label> <input type="text" id="difficulty" placeholder="Escriu aquí" required>

@@ -32,7 +32,6 @@ submit.addEventListener('click', function (e) {
                 verify_email = true;
             }
         }
-    
         if(verify_email){
             alert("Aquest correu electrònic ja està en ús, si us plau prova amb un altre.");
         } else if(verify_pw){
