@@ -127,6 +127,30 @@ p{
     display: grid;
     justify-content: center;
 }
+/* Home */
+.form_addEvent{
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    margin-bottom: 3rem;
+    font-family: var(--primary-font);
+}
+.form_element{
+    font-size: 1.5rem;
+}
+.form_element::placeholder{
+    font-size: 1rem;
+}
+.submit_formAddEvent{
+    padding: .1rem 3rem;
+    font-size: 1.2rem;
+    border: none;
+    color: white;
+    background-color: var(--blue);
+}
+.submit_formAddEvent:hover{
+    cursor: pointer;
+}
 
 
 
@@ -232,32 +256,44 @@ input::placeholder{
     padding: 0.5rem;
 }
 /* Home: */
+.optionsTable_home{
+    padding-top: .25rem;
+    padding-bottom: .25rem;
+    padding-left: .25rem;
+    padding-right: .25rem;
+    width: 3rem;
+    height: 3rem;
+    border: none;
+}
+.optionsTable_home:hover{
+    transition: .25s;
+    width: 3.5rem;
+    height: 3.5rem;
+}
+.edit_home{
+    margin-right: 2rem;
+}
+.delete_home{
+    margin-left: 2rem;
+}
+.group_addEvent{
+    display: block;
+}
 .button_addEvent{
-    /* Have to determinate the position */
     font-size: 3rem;
     width: 3.5rem;
     height: 3.5rem;
     border-radius: 2rem;
+    margin-bottom: 5rem;
     background-color: var(--blue);
     border: 1px solid black;
 }
-.formContent{
-    display: none;
-}
 .button_addEvent:hover{
-    font-size: 3.5rem;
-    width: 4rem;
-    height: 4rem;
+    font-size: 3.2rem;
+    margin-bottom: 5.2rem;
 }
-.optionsTable_home{
-    margin-right: 1.5rem;
-    width: 2rem;
-    height: 5rem;
-    border: none;
-}
-.optionsTable_home:hover{
-    transition: .5s;
-    font-size: 1.5rem;
+#hideForm{
+    margin-bottom: 0rem;
 }
 /* Old Home-Page: */
 .buttonGroup_home{
@@ -346,30 +382,6 @@ td { /* Style of the boxes in the table */
     border-top: 1px solid var(--border-input);
     border-bottom: 1px solid var(--border-input);
     font-weight: 600;
-}
-/* Form to create new boxes: */
-.form{
-    text-align: center;
-}
-.box {
-    display: block;
-}
-.box label {
-    font-family: 'Quicksand', sans-serif;
-}
-.box input {
-    width: 8em;
-    height: 2em;
-    text-align: center;
-    font-family: 'Quicksand', sans-serif;
-}
-.submit {
-    width: 8em;
-    height: 2em;
-    font-family: 'Quicksand', sans-serif;
-    color: white;
-    background-color: var(--blue);
-    border: 2px solid white;
 }
 
 /* Event Page: */

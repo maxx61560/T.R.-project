@@ -42,21 +42,21 @@
 
             </tbody>
         </table>
+        <div class="group_addEvent">
+            <button class="button_addEvent button" style="display: block;" id="showForm" onclick="show_addEvent()">+</button> <!-- Button for create an event -->
+            <button class="button_addEvent button" style="display: none;" id="hideForm" onclick="hide_addEvent()">-</button>
 
-        <button class="button_addEvent button" id="button_createEvent" onclick="show_formNewEvent()">+</button> <!-- Button for create an event -->
-        <div class="formContent">
-            
-        </div>
-
-        <!-- To add more events: -->
-        <form  class="form" onsubmit="event.preventDefault(); onSubmit();" autocomplete="off">
-            <div class="box">
-                <label for="difficulty">Grau de dificultat</label> <input type="text" id="difficulty" placeholder="Escriu aquí" required>
-                <label for="name">Nom de l'esdeveniment</label> <input type="text" id="name" placeholder="Escriu aquí" required>
-                <label for="date">Data de venciment</label> <input type="text" id="date" placeholder="Escriu aquí" required>
+            <div id="eventContent_visibility" style="display: none;">
+                <!-- To add more events: -->
+                <form class="form_addEvent" onsubmit="event.preventDefault(); onSubmit();" autocomplete="off">
+                    <input type="text" class="form_element" id="difficulty" placeholder="Grau de dificultat" required>
+                    <input type="text" class="form_element" id="name" placeholder="Nom de l'esdeveniment" required>
+                    <input type="text" class="form_element" id="date" placeholder="Data de venciment" required>
+                
+                    <input class="submit_formAddEvent" type="submit" value="Crear">
+                </form>
             </div>
-            <input class="submit" type="submit" value="Crear">
-        </form>
+        </div>
 
     </main>
 

@@ -20,9 +20,16 @@ defaultEvent["name"] = "Exemple d'esdeveniment";
 defaultEvent["date"] = "dd/mm/aaaa";
 InsertData(defaultEvent);
 
-//Button to show the form to create event:
-function show_formNewEvent() {
-    document.getElementById('button_createEvent').style.display = 'block';
+//Functions that show and hide the form to create new event:
+function show_addEvent() {
+    document.getElementById('eventContent_visibility').style.display = 'block';
+    document.getElementById('showForm').style.display = 'none';
+    document.getElementById('hideForm').style.display = 'block';
+}
+function hide_addEvent() {
+    document.getElementById('eventContent_visibility').style.display = 'none';
+    document.getElementById('showForm').style.display = 'block';
+    document.getElementById('hideForm').style.display = 'none';
 }
 
 // To create events:
@@ -49,8 +56,10 @@ function InsertData(data) {
     column1 = Row.insertCell(0).innerHTML = data.difficulty;
     column2 = Row.insertCell(1).innerHTML = data.name;
     column3 = Row.insertCell(2).innerHTML = data.date;
-    column3 = Row.insertCell(3).innerHTML = `<input class="submit optionsTable_home edit_home" onClick="Edit(this)" type="image" src="/img/edit.jpg">
-                                            <input class="submit optionsTable_home delete_home" onClick="Delete(this)" type="image" src="/img/delete.jpg">`;
+    column3 = Row.insertCell(3).innerHTML = 
+    `<input class="submit optionsTable_home edit_home" onClick="Edit(this)" type="image" src="/img/edit.jpg">
+    <input class="submit optionsTable_home delete_home" onClick="Delete(this)" type="image" src="/img/delete.jpg">`;
+
     document.getElementById("difficulty").focus();
     Empty();
 }
@@ -61,6 +70,7 @@ function Empty() {
     Row = null;
 }
 function Edit(td) {
+    show_addEvent();
     Row = td.parentElement.parentElement;
     document.getElementById("difficulty").value = Row.cells[0].innerHTML;
     document.getElementById("name").value = Row.cells[1].innerHTML;
