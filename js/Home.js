@@ -33,6 +33,39 @@ defaultEvent3['date3'] = 'dd/mm/aaaa';
 InsertData3(defaultEvent3);
 
 
+//Functions that show and hide the the sections contents of 'Home':
+function show_section(elem) {
+    if(elem === 'examens'){
+        document.getElementById('sectionContent_visibility1').style.display = 'block';
+        document.getElementById('showExamens').style.display = 'none';
+        document.getElementById('hideExamens').style.display = 'block';
+    } else if(elem === 'projectes'){
+        document.getElementById('sectionContent_visibility2').style.display = 'block';
+        document.getElementById('showProjectes').style.display = 'none';
+        document.getElementById('hideProjectes').style.display = 'block';
+    } else if(elem === 'deures'){
+        document.getElementById('sectionContent_visibility3').style.display = 'block';
+        document.getElementById('showDeures').style.display = 'none';
+        document.getElementById('hideDeures').style.display = 'block';
+    }
+}
+function hide_section(elem) {
+    if(elem === 'examens'){
+        document.getElementById('sectionContent_visibility1').style.display = 'none';
+        document.getElementById('showExamens').style.display = 'block';
+        document.getElementById('hideExamens').style.display = 'none';
+    } else if(elem === 'projectes'){
+        document.getElementById('sectionContent_visibility2').style.display = 'none';
+        document.getElementById('showProjectes').style.display = 'block';
+        document.getElementById('hideProjectes').style.display = 'none';
+    } else if(elem === 'deures'){
+        document.getElementById('sectionContent_visibility3').style.display = 'none';
+        document.getElementById('showDeures').style.display = 'block';
+        document.getElementById('hideDeures').style.display = 'none';
+    }
+}
+
+
 //Functions that show and hide the form to create new event:
 function show_addEvent(elem) {
     if(elem === 'examens'){

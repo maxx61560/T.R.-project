@@ -22,102 +22,169 @@
             <div class="titles">
                 <h1>Benvingut/da <span id="span_name"></span></h1>
             </div>
-            <p class="description">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolor earum et debitis
-                obcaecati similique nemo voluptatem explicabo, unde sint quia?</p>
+            <p class="description">Organitzar-se amb 'Títol de la pàgina' és tan senzill com afegir els teus esdeveniments educatius i prou. Nosaltres ens encarreguem de la resta!</p>
         </div>
     </header>
 
-    <main>
-        <!-- Main tables: -->
-        <p class="titleTable">Exàmens</p>
-        <table class="table" id="table1">
-            <thead>
-                <div>
-                    <th class="table_Default">Grau de dificultat</th>
-                    <th class="table_Default">Assignatura</th>
-                    <th class="table_Default">Data de l'examen</th>
-                    <th class="table_Default">Opcions</th>
+    <main> <!-- Main tables: -->
+        <div class="sections_home">
+            <div class="sectionTitle">
+                <div class="sectionTitle_child">
+                    <button class="visibilityContents_home" style="display: none" id="showExamens"
+                        onclick="show_section('examens')">▶</button> <!-- Button for create an event -->
+                    <button class="visibilityContents_home" style="display: block;" id="hideExamens"
+                        onclick="hide_section('examens')">▼</button>
+                    <p class="titleTable">Exàmens</p>
                 </div>
-            </thead>
-            <tbody>
-
-            </tbody>
-        </table>
-        <div class="group_addEvent">
-            <button class="button_addEvent button" style="display: block;" id="showForm1" onclick="show_addEvent('examens')">+</button> <!-- Button for create an event -->
-            <button class="button_addEvent button" style="display: none;" id="hideForm1" onclick="hide_addEvent('examens')">-</button>
-
-            <div id="eventContent_visibility1" style="display: none;">
-                <!-- To add more events: -->
-                <form class="form_addEvent" onsubmit="event.preventDefault(); onSubmit('examens');" autocomplete="off">
-                    <input type="text" class="form_element" id="difficulty1" placeholder="Grau de dificultat" required>
-                    <input type="text" class="form_element" id="name1" placeholder="Nom de l'esdeveniment" required>
-                    <input type="text" class="form_element" id="date1" placeholder="Data de venciment" required>
-                
-                    <input class="submit_formAddEvent" type="submit" value="Crear">
-                </form>
+            </div>
+            
+            <div id="sectionContent_visibility1" style="display: block;">
+            
+                <table class="table" id="table1">
+                    <thead>
+                        <div>
+                            <th class="table_Default">Grau de dificultat</th>
+                            <th class="table_Default">Assignatura</th>
+                            <th class="table_Default">Data de l'examen</th>
+                            <th class="table_Default">Opcions</th>
+                        </div>
+                    </thead>
+                    <tbody>
+            
+                    </tbody>
+                </table>
+            
+                <div class="group_addEvent">
+                    <div id="eventContent_visibility1" style="display: none;">
+                        <!-- To add more events: -->
+                        <form class="form_addEvent" onsubmit="event.preventDefault(); onSubmit('examens');" autocomplete="off">
+                            <select class="form_element form_elementSelect" id="difficulty1" required>
+                                <option value>-- Grau de dificultat --</option>
+                                <option value="Fàcil">Fàcil</option>
+                                <option value="Mitjà">Mitja</option>
+                                <option value="Difícil">Difícil</option>
+                            </select>
+                            <input type="text" class="form_element" id="name1" placeholder="Nom de l'esdeveniment" required>
+                            <input type="text" class="form_element" id="date1" placeholder="Data de venciment" required>
+            
+                            <input class="submit_formAddEvent" type="submit" value="Crear">
+                        </form>
+                    </div>
+            
+                    <button class="addEvent addEvent_show" style="display: block;" id="showForm1"
+                        onclick="show_addEvent('examens')">+</button> <!-- Button for create an event -->
+                    <button class="addEvent addEvent_hide" style="display: none;" id="hideForm1"
+                        onclick="hide_addEvent('examens')">-</button>
+                </div>
             </div>
         </div>
 
-        <p class="titleTable">Projectes</p>
-        <table class="table" id="table2">
-            <thead>
-                <div>
-                    <th class="table_Default">Grau de dificultat</th>
-                    <th class="table_Default">Títol del projecte</th>
-                    <th class="table_Default">Data d'entrega</th>
-                    <th class="table_Default">Opcions</th>
+
+        <div class="sections_home"> 
+            <div class="sectionTitle">
+                <div class="sectionTitle_child">
+                    <button class="visibilityContents_home" style="display: none" id="showProjectes"
+                        onclick="show_section('projectes')">▶</button> <!-- Button for create an event -->
+                    <button class="visibilityContents_home" style="display: block;" id="hideProjectes"
+                        onclick="hide_section('projectes')">▼</button>
+                    <p class="titleTable">Projectes</p>
                 </div>
-            </thead>
-            <tbody>
+            </div>
 
-            </tbody>
-        </table>
-        <div class="group_addEvent">
-            <button class="button_addEvent button" style="display: block;" id="showForm2" onclick="show_addEvent('projectes')">+</button> <!-- Button for create an event -->
-            <button class="button_addEvent button" style="display: none;" id="hideForm2" onclick="hide_addEvent('projectes')">-</button>
-
-            <div id="eventContent_visibility2" style="display: none;">
-                <!-- To add more events: -->
-                <form class="form_addEvent" onsubmit="event.preventDefault(); onSubmit('projectes');" autocomplete="off">
-                    <input type="text" class="form_element" id="difficulty2" placeholder="Grau de dificultat" required>
-                    <input type="text" class="form_element" id="name2" placeholder="Nom de l'esdeveniment" required>
-                    <input type="text" class="form_element" id="date2" placeholder="Data de venciment" required>
-                
-                    <input class="submit_formAddEvent" type="submit" value="Crear">
-                </form>
+            <div id="sectionContent_visibility2" style="display: block;">
+            
+                <table class="table" id="table2">
+                    <thead>
+                        <div>
+                            <th class="table_Default">Grau de dificultat</th>
+                            <th class="table_Default">Títol del projecte</th>
+                            <th class="table_Default">Data d'entrega</th>
+                            <th class="table_Default">Opcions</th>
+                        </div>
+                    </thead>
+                    <tbody>
+            
+                    </tbody>
+                </table>
+            
+                <div class="group_addEvent">
+                    <div id="eventContent_visibility2" style="display: none;">
+                        <!-- To add more events: -->
+                        <form class="form_addEvent" onsubmit="event.preventDefault(); onSubmit('projectes');" autocomplete="off">
+                            <select class="form_element form_elementSelect" id="difficulty2" required>
+                                <option value>-- Grau de dificultat --</option>
+                                <option value="Fàcil">Fàcil</option>
+                                <option value="Mitjà">Mitja</option>
+                                <option value="Difícil">Difícil</option>
+                            </select>
+                            <input type="text" class="form_element" id="name2" placeholder="Nom de l'esdeveniment" required>
+                            <input type="text" class="form_element" id="date2" placeholder="Data de venciment" required>
+            
+                            <input class="submit_formAddEvent" type="submit" value="Crear">
+                        </form>
+                    </div>
+            
+                    <button class="addEvent addEvent_show" style="display: block;" id="showForm2"
+                        onclick="show_addEvent('projectes')">+</button> <!-- Button for create an event -->
+                    <button class="addEvent addEvent_hide" style="display: none;" id="hideForm2"
+                        onclick="hide_addEvent('projectes')">-</button>
+                </div>
             </div>
         </div>
 
-        <p class="titleTable">Deures</p>
-        <table class="table" id="table3">
-            <thead>
-                <div>
-                    <th class="table_Default">Grau de dificultat</th>
-                    <th class="table_Default">Nom de la tasca</th>
-                    <th class="table_Default">Data d'entrega</th>
-                    <th class="table_Default">Opcions</th>
+
+        <div class="sections_home">
+            <div class="sectionTitle">
+                <div class="sectionTitle_child">
+                    <button class="visibilityContents_home" style="display: none" id="showDeures"
+                        onclick="show_section('deures')">▶</button> <!-- Button for create an event -->
+                    <button class="visibilityContents_home" style="display: block;" id="hideDeures"
+                        onclick="hide_section('deures')">▼</button>
+                    <p class="titleTable">Deures</p>
                 </div>
-            </thead>
-            <tbody>
+            </div>
 
-            </tbody>
-        </table>
-        <div class="group_addEvent">
-            <button class="button_addEvent button" style="display: block;" id="showForm3" onclick="show_addEvent('deures')">+</button> <!-- Button for create an event -->
-            <button class="button_addEvent button" style="display: none;" id="hideForm3" onclick="hide_addEvent('deures')">-</button>
-
-            <div id="eventContent_visibility3" style="display: none;">
-                <!-- To add more events: -->
-                <form class="form_addEvent" onsubmit="event.preventDefault(); onSubmit('deures');" autocomplete="off">
-                    <input type="text" class="form_element" id="difficulty3" placeholder="Grau de dificultat" required>
-                    <input type="text" class="form_element" id="name3" placeholder="Nom de l'esdeveniment" required>
-                    <input type="text" class="form_element" id="date3" placeholder="Data de venciment" required>
-                
-                    <input class="submit_formAddEvent" type="submit" value="Crear">
-                </form>
+            <div id="sectionContent_visibility3" style="display: block;">
+            
+                <table class="table" id="table3">
+                    <thead>
+                        <div>
+                            <th class="table_Default">Grau de dificultat</th>
+                            <th class="table_Default">Nom de la tasca</th>
+                            <th class="table_Default">Data d'entrega</th>
+                            <th class="table_Default">Opcions</th>
+                        </div>
+                    </thead>
+                    <tbody>
+            
+                    </tbody>
+                </table>
+            
+                <div class="group_addEvent">
+                    <div id="eventContent_visibility3" style="display: none;">
+                        <!-- To add more events: -->
+                        <form class="form_addEvent" onsubmit="event.preventDefault(); onSubmit('deures');" autocomplete="off">
+                            <select class="form_element form_elementSelect" id="difficulty3" required>
+                                <option value>-- Grau de dificultat --</option>
+                                <option value="Fàcil">Fàcil</option>
+                                <option value="Mitjà">Mitja</option>
+                                <option value="Difícil">Difícil</option>
+                            </select>
+                            <input type="text" class="form_element" id="name3" placeholder="Nom de l'esdeveniment" required>
+                            <input type="text" class="form_element" id="date3" placeholder="Data de venciment" required>
+            
+                            <input class="submit_formAddEvent" type="submit" value="Crear">
+                        </form>
+                    </div>
+            
+                    <button class="addEvent addEvent_show" style="display: block;" id="showForm3"
+                        onclick="show_addEvent('deures')">+</button> <!-- Button for create an event -->
+                    <button class="addEvent addEvent_hide" style="display: none;" id="hideForm3"
+                        onclick="hide_addEvent('deures')">-</button>
+                </div>
             </div>
         </div>
+
         <br><br><br>
     </main>
 
