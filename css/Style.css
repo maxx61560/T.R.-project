@@ -243,12 +243,17 @@ input::placeholder{
 }
 
 /* Forms */
+.group_addEvent{
+    padding-bottom: 2rem;
+}
+.formGroup_addEvent{
+    display: flex;
+}
 .form_addEvent{
-    margin-left: 13rem;
-    margin-top: .75rem;
     display: flex;
     justify-content: center;
-    gap: 2rem;
+    margin-top: -2.25rem;
+    margin-bottom: .4rem;
     font-family: var(--primary-font);
 }
 .form_element{
@@ -299,7 +304,7 @@ input::placeholder{
 .visibilityContents_home{
     /* Add position */
     margin-left: .25rem;
-    font-size: 2rem;
+    font-size: 1.8rem;
     border: none;
     background-color: var(--yellow);
     color: black;
@@ -343,10 +348,8 @@ input::placeholder{
         margin-left: .25rem;
     }
 }
-.group_addEvent{
-    display: flex;
-}
 .addEvent{
+    margin-left: 85rem;
     font-size: 2.5rem;
     cursor: pointer;
     width: 3rem;
@@ -360,29 +363,19 @@ input::placeholder{
     transition: 1s;
     color: var(--yellow);
 }
-.addEvent_show{
-    margin-left: 85rem;
-}
-.addEvent_hide{
-    margin-left: 8.875rem;
-}
-@media (max-width: 768px){
-    /* If I can fix the button 'addEvent' in the right, detele this part: */
-    .addEvent_show{
-    }
-    .addEvent_hide{
-    }
-}
 
 /* Labels */
+.z{
+    background-color: red;
+}
 .sections_home{
     padding: .5rem;
 }
 .sectionTitle{
-    background-color: var(--yellow);
-}
-.sectionTitle_child{
     display: flex;
+    align-items: flex-end;
+    height: 2.25rem;
+    background-color: var(--yellow);
 }
 .table{
     display: inline-block;

@@ -21,7 +21,7 @@ defaultEvent1['date1'] = 'dd/mm/aaaa';
 InsertData1(defaultEvent1);
 
 const defaultEvent2 = {};
-defaultEvent2['difficulty2'] = 'Mitjà';
+defaultEvent2['difficulty2'] = 'Mig';
 defaultEvent2['name2'] = "Projecte d'exemple";
 defaultEvent2['date2'] = 'dd/mm/aaaa';
 InsertData2(defaultEvent2);
@@ -72,14 +72,20 @@ function show_addEvent(elem) {
         document.getElementById('eventContent_visibility1').style.display = 'block';
         document.getElementById('showForm1').style.display = 'none';
         document.getElementById('hideForm1').style.display = 'block';
+        // let submit_name = document.getElementById('submit1');
+        // submit_name.innerHTML = 'Crear';
     } else if(elem === 'projectes'){
         document.getElementById('eventContent_visibility2').style.display = 'block';
         document.getElementById('showForm2').style.display = 'none';
         document.getElementById('hideForm2').style.display = 'block';
+        // let submit_name = document.getElementById('submit2');
+        // submit_name.innerHTML = 'Crear';
     } else if(elem === 'deures'){
         document.getElementById('eventContent_visibility3').style.display = 'block';
         document.getElementById('showForm3').style.display = 'none';
         document.getElementById('hideForm3').style.display = 'block';
+        // let submit_name = document.getElementById('submit3');
+        // submit_name.innerHTML = 'Crear';
     }
 }
 function hide_addEvent(elem) {
@@ -156,7 +162,18 @@ function Read3() {
 function InsertData1(data) {
     let Table = document.getElementById('table1').getElementsByTagName('tbody')[0];
     let Row1 = Table.insertRow(Table.length);
-    column1 = Row1.insertCell(0).innerHTML = data.difficulty1;
+    let difficulty = document.createElement('difficulty');
+
+    if(data.difficulty1 === "Fàcil"){
+        difficulty.style.backgroundColor = 'green';
+    } else if(data.difficulty1 === "Mig"){
+        difficulty.style.backgroundColor = 'orange';
+    } else if(data.difficulty1 === "Difícil"){
+        difficulty.style.backgroundColor = 'red';
+    }
+    difficulty.textContent = data.difficulty1;
+
+    column1 = Row1.insertCell(0).appendChild(difficulty);
     column2 = Row1.insertCell(1).innerHTML = data.name1;
     column3 = Row1.insertCell(2).innerHTML = data.date1;
     column3 = Row1.insertCell(3).innerHTML = 
@@ -168,7 +185,18 @@ function InsertData1(data) {
 function InsertData2(data) {
     let Table = document.getElementById('table2').getElementsByTagName('tbody')[0];
     let Row2 = Table.insertRow(Table.length);
-    column1 = Row2.insertCell(0).innerHTML = data.difficulty2;
+    let difficulty = document.createElement('difficulty');
+
+    if(data.difficulty2 === "Fàcil"){
+        difficulty.style.backgroundColor = 'green';
+    } else if(data.difficulty2 === "Mig"){
+        difficulty.style.backgroundColor = 'orange';
+    } else if(data.difficulty2 === "Difícil"){
+        difficulty.style.backgroundColor = 'red';
+    }
+    difficulty.textContent = data.difficulty2;
+
+    column2 = Row2.insertCell(0).appendChild(difficulty);
     column2 = Row2.insertCell(1).innerHTML = data.name2;
     column3 = Row2.insertCell(2).innerHTML = data.date2;
     column3 = Row2.insertCell(3).innerHTML = 
@@ -180,7 +208,18 @@ function InsertData2(data) {
 function InsertData3(data) {
     let Table = document.getElementById('table3').getElementsByTagName('tbody')[0];
     let Row3 = Table.insertRow(Table.length);
-    column1 = Row3.insertCell(0).innerHTML = data.difficulty3;
+    let difficulty = document.createElement('difficulty');
+
+    if(data.difficulty3 === "Fàcil"){
+        difficulty.style.backgroundColor = 'green';
+    } else if(data.difficulty3 === "Mig"){
+        difficulty.style.backgroundColor = 'orange';
+    } else if(data.difficulty3 === "Difícil"){
+        difficulty.style.backgroundColor = 'red';
+    }
+    difficulty.textContent = data.difficulty3;
+
+    column3 = Row3.insertCell(0).appendChild(difficulty);
     column2 = Row3.insertCell(1).innerHTML = data.name3;
     column3 = Row3.insertCell(2).innerHTML = data.date3;
     column3 = Row3.insertCell(3).innerHTML = 
@@ -217,6 +256,9 @@ function Edit1(td) {
     document.getElementById('difficulty1').value = Row1.cells[0].innerHTML;
     document.getElementById('name1').value = Row1.cells[1].innerHTML;
     document.getElementById('date1').value = Row1.cells[2].innerHTML;
+
+    // let a = document.getElementById('submit1');
+    // a.innerHTML = 'Actualitzar';
 }
 function Edit2(td) {
     show_addEvent('projectes');
@@ -224,6 +266,9 @@ function Edit2(td) {
     document.getElementById('difficulty2').value = Row2.cells[0].innerHTML;
     document.getElementById('name2').value = Row2.cells[1].innerHTML;
     document.getElementById('date2').value = Row2.cells[2].innerHTML;
+
+    // let submit_name = document.getElementById('submit2');
+    // submit_name.innerHTML = 'Actualitzar';
 }
 function Edit3(td) {
     show_addEvent('deures');
@@ -231,6 +276,9 @@ function Edit3(td) {
     document.getElementById('difficulty3').value = Row3.cells[0].innerHTML;
     document.getElementById('name3').value = Row3.cells[1].innerHTML;
     document.getElementById('date3').value = Row3.cells[2].innerHTML;
+
+    // let submit_name = document.getElementById('submit3');
+    // submit_name.innerHTML = 'Actualitzar';
 }
 
 
