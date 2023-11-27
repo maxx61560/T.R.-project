@@ -105,6 +105,9 @@ input::placeholder{
     font-size: 220%;
 }
 .help{
+    /* display: none; */
+    width: 1rem;
+    height: 1rem;
     border: none;
     font-size: 1rem;
 }
@@ -405,54 +408,20 @@ td { /* Style of the boxes in the table */
 
 
 
+/* EVENT PAGE */
 
-
-
-
-
-
-
-
-
-
-
-
-
-/* EXTRA PART */
-
-/* Home: */
-/* Old Home-Page: */
-.event_name{
-    font-weight: 800;
-}
-.event_date{
-    font-style: oblique;
-}
-/* Event Page: */
-.event_contents{
-    font-weight: 600;
-    margin-right: 2rem;
-}
+/* Titles */
 .event_title{
     font-family: none;
     font-weight: 600;
-    font-size: 2.5rem;
-    text-decoration: underline;
+    font-size: 3rem;
 }
-/* ADRESSES */
-/* Old Home-Page: */
-.a_seeMore_home{
-    text-decoration: none;
-    color: var(--adress-blue);
-}
-.a_seeMore_home:hover{
-    text-decoration: underline;
-}
-/* Event Page: */
+
+/* Adresses */
 .nav_eventPage{
     display: flex;
+    justify-content: center;
     font-family: var(--primary-font);
-    margin-left: 26rem;
     gap: 10rem;
 }
 .nav_elem{
@@ -464,82 +433,79 @@ td { /* Style of the boxes in the table */
     color: var(--gray);
 }
 .nav_elem:hover{
+    transition: .5s;
     color: var(--blue);
-    font-weight: 600;
 }
-/*BUTTONS*/
-/* Old Home-Page: */
-.buttonGroup_home{
-    margin-right: 3rem;
-    background-color: white;
+@media(max-width: 768px){
+    .nav_eventPage{
+        gap: 3rem;
+    }
 }
-.button_done{
-    border: solid 2px var(--background-color);
-}
-.button_delete_home{
-    border: none;
-}
-/* Event Page: */
+
+/* Buttons */
 .buttonGroup_eventPage{
     display: flex;
-    margin-left: 10rem;
+    margin-left: 5rem;
     margin-top: 4rem;
     font-family: var(--primary-font);
     gap: 3rem;
 }
-.button_edit{
+.buttons_eventPage{
     font-size: 1.5rem;
-    padding: 0.5rem;
+    padding: .5rem;
     border-radius: .25rem;
+}
+.buttons_eventPage:hover{
+    cursor: pointer;
+    transition: .25s;
+}
+.button_edit{
+    background-color: var(--blue);
+    color: white;
+    border: solid 1px black;
+}
+.button_edit.hover{
+    border: solid 2px black;
 }
 .button_delete_eventPage{
-    font-size: 1.5rem;
-    padding: 0.5rem;
     background-color: var(--background-color);
     border: solid 1px var(--gray);
-    border-radius: .25rem;
 }
 .button_delete_eventPage:hover{
-    transition: 0.05s;
     border: solid 2px var(--gray);
-    cursor: pointer;
 }
-/* LABELS: */
-/* Old Home-Page: */
-.label_eventHome{
-    display: flex;
-    margin-top: 3.5rem;
-    padding: 1rem;
-    background-color: white;
-    border: solid 1px var(--border-input);
+@media(max-width: 768px){
+    .buttonGroup_eventPage{
+        margin-left: 2rem;
+        margin-top: 3rem;
+        margin-bottom: 3rem;
+        gap: 8rem;
+    }
 }
-.event_initialPosition{
-    margin-left: 15rem; /* Try to change it and put the initial posicion in '.event' */
-}
-.event_elem{
-    display: grid;
-    place-items: center;
-    margin-right: 3rem;
-    font-family: var(--primary-font);
-}
-.event_difficulty{
-    padding: 0.5rem 1rem;
-    margin-right: 3rem;
-    border-radius: 1rem;
-    border: solid 2px black;
-    background-color: red;
-}
-/* Event Page: */
+
+/* Labels */
 .label_eventPage{
     display: block;
     margin-top: 3rem;
-    margin-left: 10rem;
+    margin-left: 5rem;
     margin-right: 10rem;
-    font-family: var(--primary-font);
 } 
+.event_contents{
+    font-weight: 800;  
+    font-size: 110%; 
+    text-decoration: underline;
+    margin-bottom: .4rem;
+    margin-right: 2rem;
+}
 .elem_eventPage{
     margin-bottom: 2rem;
 }
 .elem_small{
     display: flex;
+}
+@media(max-width: 768px){
+    .label_eventPage{
+        margin-left: 2rem;
+        margin-right: 2rem;
+    }
 }

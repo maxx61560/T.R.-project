@@ -1,6 +1,6 @@
 //Global functions:
 function help(){
-    alert("Ajuda'ns a millorar! \nSi trobes algun problema a l'aplicatiu, fes-nos-ho saber al següent correu electrònic:    'maxvilaruiz123@gmail.com'. \n\nMoltes gràcies.")
+    alert("Ajuda'ns a millorar! \nSi tens algun problema amb l'aplicatiu o has trobat algun error en el sistema, fes-nos-ho saber al següent correu electrònic:    'maxvilaruiz123@gmail.com'. \n\nMoltes gràcies.")
 }
 
 
@@ -170,7 +170,9 @@ function Read3() {
     DataForm3['date3'] = document.getElementById('date3').value;
     return DataForm3;
 }
-
+// Attempt to save the events in local storage to enable the 'EventPage.html':
+localStorage.setItem('contador1', 0);
+//
 function InsertData1(data) {
     let Table = document.getElementById('table1').getElementsByTagName('tbody')[0];
     let Row1 = Table.insertRow(Table.length);
@@ -192,6 +194,16 @@ function InsertData1(data) {
     `<input class="optionsTable_home edit_home" onClick="Edit1(this)" type="image" src="/img/edit.jpg">
     <input class="optionsTable_home delete_home" onClick="Delete1(this)" type="image" src="/img/delete.jpg">`;
     document.getElementById('difficulty1').focus();
+
+
+    // Attempt to save the events in local storage to enable the 'EventPage.html':
+    let contador = localStorage.getItem('contador1');
+    const hola = [[data.difficulty1], [data.name1], [data.date1]];
+    localStorage.setItem(`example${contador}`, hola);
+    contador += 1;
+    localStorage.setItem('contador1', contador);
+
+    //
     Empty1();
 }
 function InsertData2(data) {
@@ -212,8 +224,8 @@ function InsertData2(data) {
     column2 = Row2.insertCell(1).innerHTML = data.name2;
     column3 = Row2.insertCell(2).innerHTML = data.date2;
     column3 = Row2.insertCell(3).innerHTML = 
-    `<input class="submit optionsTable_home edit_home" onClick="Edit2(this)" type="image" src="/img/edit.jpg">
-    <input class="submit optionsTable_home delete_home" onClick="Delete2(this)" type="image" src="/img/delete.jpg">`;
+    `<input class="optionsTable_home edit_home" onClick="Edit2(this)" type="image" src="/img/edit.jpg">
+    <input class="optionsTable_home delete_home" onClick="Delete2(this)" type="image" src="/img/delete.jpg">`;
     document.getElementById('difficulty2').focus();
     Empty2();
 }
@@ -235,8 +247,8 @@ function InsertData3(data) {
     column2 = Row3.insertCell(1).innerHTML = data.name3;
     column3 = Row3.insertCell(2).innerHTML = data.date3;
     column3 = Row3.insertCell(3).innerHTML = 
-    `<input class="submit optionsTable_home edit_home" onClick="Edit3(this)" type="image" src="/img/edit.jpg">
-    <input class="submit optionsTable_home delete_home" onClick="Delete3(this)" type="image" src="/img/delete.jpg">`;
+    `<input class="optionsTable_home edit_home" onClick="Edit3(this)" type="image" src="/img/edit.jpg">
+    <input class="optionsTable_home delete_home" onClick="Delete3(this)" type="image" src="/img/delete.jpg">`;
     document.getElementById('difficulty3').focus();
     Empty3();
 }
