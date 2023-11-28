@@ -1,3 +1,8 @@
+let arrayExamens = [];
+
+
+
+
 //Global functions:
 function help(){
     alert("Ajuda'ns a millorar! \nSi tens algun problema amb l'aplicatiu o has trobat algun error en el sistema, fes-nos-ho saber al següent correu electrònic:    'maxvilaruiz123@gmail.com'. \n\nMoltes gràcies.")
@@ -27,6 +32,7 @@ const defaultEvent1 = {};
 defaultEvent1['difficulty1'] = 'Fàcil';
 defaultEvent1['name1'] = "Examen d'exemple";
 defaultEvent1['date1'] = 'dd/mm/aaaa';
+defaultEvent1['isdefault'] = true;
 InsertData1(defaultEvent1);
 
 const defaultEvent2 = {};
@@ -170,9 +176,24 @@ function Read3() {
     DataForm3['date3'] = document.getElementById('date3').value;
     return DataForm3;
 }
+
+
+
+
+
+
+
+
+
 // Attempt to save the events in local storage to enable the 'EventPage.html':
-localStorage.setItem('contador1', 0);
+// localStorage.setItem('contador1', 0);
+
+
 //
+
+
+
+
 function InsertData1(data) {
     let Table = document.getElementById('table1').getElementsByTagName('tbody')[0];
     let Row1 = Table.insertRow(Table.length);
@@ -196,14 +217,68 @@ function InsertData1(data) {
     document.getElementById('difficulty1').focus();
 
 
+
+
+
+
+
+    if(localStorage.getItem('arrayExamens')){
+        console.log('existe');
+        let hola = JSON.parse(localStorage.getItem('arrayExamens')); // Change the function name
+        arrayExamens = hola;
+        console.log(hola);
+
+        if(!data.isdefault){
+            arrayExamens.push({
+                difficulty: data.difficulty1,
+                name: data.name1,
+                date: data.date1
+            });
+    
+            localStorage.setItem('arrayExamens', JSON.stringify(arrayExamens));
+        }
+    } else{
+        // console.log(arrayExamens);
+        console.log('no existe');
+        if(!data.isdefault){
+            arrayExamens.push({
+                difficulty: data.difficulty1,
+                name: data.name1,
+                date: data.date1
+            });
+    
+            localStorage.setItem('arrayExamens', JSON.stringify(arrayExamens));
+        }
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     // Attempt to save the events in local storage to enable the 'EventPage.html':
-    let contador = localStorage.getItem('contador1');
-    const hola = [[data.difficulty1], [data.name1], [data.date1]];
-    localStorage.setItem(`example${contador}`, hola);
-    contador += 1;
-    localStorage.setItem('contador1', contador);
+    // let contador = localStorage.getItem('contador1');
+    // const hola = [[data.difficulty1], [data.name1], [data.date1]];
+    // localStorage.setItem(`example${contador}`, hola);
+    // contador += 1;
+    // localStorage.setItem('contador1', contador);
 
     //
+
+
+
+
+
+
     Empty1();
 }
 function InsertData2(data) {
@@ -277,6 +352,7 @@ function Empty3() {
 function Edit1(td) {
     show_addEvent('examens');
     Row1 = td.parentElement.parentElement;
+
     document.getElementById('difficulty1').value = Row1.cells[0].innerHTML;
     document.getElementById('name1').value = Row1.cells[1].innerHTML;
     document.getElementById('date1').value = Row1.cells[2].innerHTML;
@@ -307,32 +383,47 @@ function Edit3(td) {
 
 
 function Update1(DataForm1) {
-    // let difficulty = document.createElement('difficulty');
+    let bgcolor = '';
+    if(DataForm1.difficulty1 === "Fàcil"){
+        bgcolor = 'green';
+    } else if(DataForm1.difficulty1 === "Mig"){
+        bgcolor = 'orange';
+    } else if(DataForm1.difficulty1 === "Difícil"){
+        bgcolor = 'red';
+    }
 
-    // if(DataForm1.difficulty1 === "Fàcil"){
-    //     difficulty.style.backgroundColor = 'green';
-    // } else if(DataForm1.difficulty1 === "Mig"){
-    //     difficulty.style.backgroundColor = 'orange';
-    // } else if(DataForm1.difficulty1 === "Difícil"){
-    //     difficulty.style.backgroundColor = 'red';
-    // }
-    // difficulty.textContent = DataForm1.difficulty1;
-    // column1 = Row1.appendChild(difficulty);
-
-    Row1.cells[0].innerHTML = DataForm1.difficulty1;
+    Row1.cells[0].innerHTML = "<span style='background-color: "+bgcolor+";'>"+DataForm1.difficulty1+"</span>";
     Row1.cells[1].innerHTML = DataForm1.name1;
     Row1.cells[2].innerHTML = DataForm1.date1;
 
     document.getElementById('difficulty1').focus();
 }
 function Update2(DataForm2) {
-    Row2.cells[0].innerHTML = DataForm2.difficulty2;
+    let bgcolor = '';
+    if(DataForm2.difficulty2 === "Fàcil"){
+        bgcolor = 'green';
+    } else if(DataForm2.difficulty2 === "Mig"){
+        bgcolor = 'orange';
+    } else if(DataForm2.difficulty2 === "Difícil"){
+        bgcolor = 'red';
+    }
+
+    Row2.cells[0].innerHTML = "<span style='background-color: "+bgcolor+";'>"+DataForm2.difficulty2+"</span>";
     Row2.cells[1].innerHTML = DataForm2.name2;
     Row2.cells[2].innerHTML = DataForm2.date2;
     document.getElementById('difficulty2').focus();
 }
 function Update3(DataForm3) {
-    Row3.cells[0].innerHTML = DataForm3.difficulty3;
+    let bgcolor = '';
+    if(DataForm3.difficulty3 === "Fàcil"){
+        bgcolor = 'green';
+    } else if(DataForm3.difficulty3 === "Mig"){
+        bgcolor = 'orange';
+    } else if(DataForm3.difficulty3 === "Difícil"){
+        bgcolor = 'red';
+    }
+
+    Row3.cells[0].innerHTML = "<span style='background-color: "+bgcolor+";'>"+DataForm3.difficulty3+"</span>";
     Row3.cells[1].innerHTML = DataForm3.name3;
     Row3.cells[2].innerHTML = DataForm3.date3;
     document.getElementById('difficulty3').focus();
