@@ -2,7 +2,7 @@ let arrayExamens;
 if(localStorage.getItem('arrayExamens')){
     arrayExamens = JSON.parse(localStorage.getItem('arrayExamens'));
     arrayExamens.forEach((elem) => {
-        InsertData1(elem);
+        Existente(elem);
     })
 } else {
     arrayExamens = [];
@@ -12,6 +12,7 @@ if(localStorage.getItem('arrayExamens')){
     defaultEvent1['date1'] = 'dd/mm/aaaa';
     defaultEvent1['isdefault'] = true;
     defaultEvent1['id1'] = 1;
+    defaultEvent1['description1'] = '';
     InsertData1(defaultEvent1);
 }
 let arrayProjectes = [];
@@ -246,7 +247,8 @@ function InsertData1(data) {
     column3 = Row1.insertCell(2).innerHTML = data.date1;
     column3 = Row1.insertCell(3).innerHTML =
     `<input class="optionsTable_home edit_home" onClick="Edit1(this, ${arrayExamens.length + 1})" type="image" src="/img/edit.jpg">
-    <input class="optionsTable_home delete_home" onClick="Delete1(this)" type="image" src="/img/delete.jpg">`;
+    <input class="optionsTable_home delete_home" onClick="Delete1(this, ${arrayExamens.length + 1})" type="image" src="/img/delete.jpg">
+    <a href="/EventPage.html?id=${arrayExamens.length + 1}&type=e">ver más</a>`;
     document.getElementById('difficulty1').focus();
 
 
@@ -256,68 +258,10 @@ function InsertData1(data) {
             name: data.name1,
             date: data.date1,
             id: arrayExamens.length + 1,
-            isdefault: data.isdefault
+            isdefault: data.isdefault,
+            description: ''
         });
         localStorage.setItem('arrayExamens', JSON.stringify(arrayExamens));
-
-
-    // if(localStorage.getItem('arrayExamens')){
-    //     console.log('existe');
-    //     let hola = JSON.parse(localStorage.getItem('arrayExamens')); // Change the function name
-    //     arrayExamens = hola;
-    //     console.log(hola);
-
-    //     if(!data.isdefault){
-    //         arrayExamens.push({
-    //             difficulty: data.difficulty1,
-    //             name: data.name1,
-    //             date: data.date1
-    //         });
-    
-    //         localStorage.setItem('arrayExamens', JSON.stringify(arrayExamens));
-    //     }
-    // } else{
-    //     // console.log(arrayExamens);
-    //     console.log('no existe');
-    //     if(!data.isdefault){
-    //         arrayExamens.push({
-    //             difficulty: data.difficulty1,
-    //             name: data.name1,
-    //             date: data.date1
-    //         });
-    
-    //         localStorage.setItem('arrayExamens', JSON.stringify(arrayExamens));
-    //     }
-
-    // }
-
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-    // Attempt to save the events in local storage to enable the 'EventPage.html':
-    // let contador = localStorage.getItem('contador1');
-    // const hola = [[data.difficulty1], [data.name1], [data.date1]];
-    // localStorage.setItem(`example${contador}`, hola);
-    // contador += 1;
-    // localStorage.setItem('contador1', contador);
-
-    //
-
-
-
-
-
 
     Empty1();
 }
@@ -390,6 +334,7 @@ function Empty3() {
 
 
 function Edit1(td, id) {
+    console.log(id);
     show_addEvent('examens');
     Row1 = td.parentElement.parentElement;
 
@@ -400,7 +345,7 @@ function Edit1(td, id) {
     let submit_name = document.getElementById('submit1');
     submit_name.innerHTML = 'Actualitzar';
 
-    document.getElementById('idExample1').value = id;
+    document.getElementById('idExamens').value = id;
 }
 function Edit2(td) {
     show_addEvent('projectes');
@@ -441,7 +386,7 @@ function Update1(DataForm1) {
     document.getElementById('difficulty1').focus();
 
 
-    let id = parseInt(document.getElementById('idExample1').value);
+    let id = parseInt(document.getElementById('idExamens').value);
     arrayExamens.forEach((elem) => {
         if(elem.id === id){
             elem.difficulty = DataForm1.difficulty1;
@@ -483,11 +428,21 @@ function Update3(DataForm3) {
 }
 
 
-function Delete1(td) {
+function Delete1(td, id) {
     if (confirm('Segur que vols eliminar aquest esdeveniment?')) {
         Row1 = td.parentElement.parentElement;
         document.getElementById('table1').deleteRow(Row1.rowIndex);
         Empty1();
+
+        let id = parseInt(document.getElementById('idExamens').value);
+        let indexToRemove;
+        arrayExamens.forEach((elem, index) => {
+            if(elem.id === id){
+                indexToRemove = index;
+            }
+        })
+        arrayExamens.splice(indexToRemove, 1);
+        localStorage.setItem('arrayExamens', JSON.stringify(arrayExamens));
     }
 }
 function Delete2(td) {

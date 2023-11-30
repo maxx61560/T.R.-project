@@ -40,20 +40,21 @@
 
     <main>
         <label class="label_eventPage">
-            <p class="elem_eventPage event_title">Nom del event</p>
+            <p class="elem_eventPage event_title"><span id="name"></span></p>
 
             <div name="Description" class="elem_eventPage">
                 <p class="event_contents">Descripció dels continguts:</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt maiores, temporibus culpa labore sint quis, consequatur saepe inventore vero odit eos nulla quasi vitae error impedit delectus. Voluptatum, porro nobis?</p>
+                <textarea id="description" rows="10" cols="50"></textarea>
+                <button onclick="save()">Guardar</button>
             </div>
 
             <div name="Due Date" class="elem_eventPage elem_small">
-                <p class="event_contents">Data de venciment:</p>
-                <p class="event_date">dd/mm/aaaa</p>
+                <p class="event_contents">Data de venciment: <span id="date"></span></p>
+                <!-- <p class="event_date">dd/mm/aaaa</p> -->
             </div>
 
             <div name="Difficulty" class="elem_eventPage elem_small">
-                <p class="event_contents">Grau de dificultat:</p>
+                <p class="event_contents">Grau de dificultat: <span id="difficulty"></span></p>
                 <div class="event_difficulty"></div>
                 <!-- Here is suppose to be the color of the difficulty degree -->
             </div>
