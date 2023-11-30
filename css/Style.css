@@ -113,6 +113,12 @@ input::placeholder{
 .help:hover{
     cursor: pointer;
 }
+@media(max-width: 768px){
+    .help{
+        width: 2rem;
+        height: 2rem;
+    }
+}
 
 
 
@@ -443,7 +449,7 @@ td { /* Style of the boxes in the table */
 }
 
 /* Buttons */
-.buttonGroup_eventPage{
+/* .buttonGroup_eventPage{
     display: flex;
     margin-left: 5rem;
     margin-top: 4rem;
@@ -464,7 +470,7 @@ td { /* Style of the boxes in the table */
     color: white;
     border: solid 1px black;
 }
-.button_edit.hover{
+.button_edit:hover{
     border: solid 2px black;
 }
 .button_delete_eventPage{
@@ -481,7 +487,7 @@ td { /* Style of the boxes in the table */
         margin-bottom: 3rem;
         gap: 8rem;
     }
-}
+} */
 
 /* Labels */
 .label_eventPage{

@@ -1,4 +1,21 @@
-let arrayExamens = [];
+let arrayExamens;
+if(localStorage.getItem('arrayExamens')){
+    arrayExamens = JSON.parse(localStorage.getItem('arrayExamens'));
+    arrayExamens.forEach((elem) => {
+        InsertData1(elem);
+    })
+} else {
+    arrayExamens = [];
+    const defaultEvent1 = {};
+    defaultEvent1['difficulty1'] = 'Fàcil';
+    defaultEvent1['name1'] = "Examen d'exemple";
+    defaultEvent1['date1'] = 'dd/mm/aaaa';
+    defaultEvent1['isdefault'] = true;
+    defaultEvent1['id1'] = 1;
+    InsertData1(defaultEvent1);
+}
+let arrayProjectes = [];
+let arrayDeures = [];
 
 
 
@@ -28,12 +45,7 @@ if(valorLocalStorage){
 //Code of the main function (table):
 
 //Default event:
-const defaultEvent1 = {};
-defaultEvent1['difficulty1'] = 'Fàcil';
-defaultEvent1['name1'] = "Examen d'exemple";
-defaultEvent1['date1'] = 'dd/mm/aaaa';
-defaultEvent1['isdefault'] = true;
-InsertData1(defaultEvent1);
+
 
 const defaultEvent2 = {};
 defaultEvent2['difficulty2'] = 'Mig';
@@ -191,7 +203,28 @@ function Read3() {
 
 //
 
+function Existente(data){
+    let Table = document.getElementById('table1').getElementsByTagName('tbody')[0];
+    let Row1 = Table.insertRow(Table.length);
+    let difficulty = document.createElement('difficulty');
 
+    if(data.difficulty === "Fàcil"){
+        difficulty.style.backgroundColor = '#54B435';
+    } else if(data.difficulty === "Mig"){
+        difficulty.style.backgroundColor = 'orange';
+    } else if(data.difficulty === "Difícil"){
+        difficulty.style.backgroundColor = 'red';
+    }
+    difficulty.textContent = data.difficulty;
+
+    column1 = Row1.insertCell(0).appendChild(difficulty);
+    column2 = Row1.insertCell(1).innerHTML = data.name;
+    column3 = Row1.insertCell(2).innerHTML = data.date;
+    column3 = Row1.insertCell(3).innerHTML =
+    `<input class="optionsTable_home edit_home" onClick="Edit1(this, ${data.id})" type="image" src="/img/edit.jpg">
+    <input class="optionsTable_home delete_home" onClick="Delete1(this)" type="image" src="/img/delete.jpg">`;
+    document.getElementById('difficulty1').focus();
+}
 
 
 function InsertData1(data) {
@@ -200,7 +233,7 @@ function InsertData1(data) {
     let difficulty = document.createElement('difficulty');
 
     if(data.difficulty1 === "Fàcil"){
-        difficulty.style.backgroundColor = 'green';
+        difficulty.style.backgroundColor = '#54B435';
     } else if(data.difficulty1 === "Mig"){
         difficulty.style.backgroundColor = 'orange';
     } else if(data.difficulty1 === "Difícil"){
@@ -211,47 +244,54 @@ function InsertData1(data) {
     column1 = Row1.insertCell(0).appendChild(difficulty);
     column2 = Row1.insertCell(1).innerHTML = data.name1;
     column3 = Row1.insertCell(2).innerHTML = data.date1;
-    column3 = Row1.insertCell(3).innerHTML = 
-    `<input class="optionsTable_home edit_home" onClick="Edit1(this)" type="image" src="/img/edit.jpg">
+    column3 = Row1.insertCell(3).innerHTML =
+    `<input class="optionsTable_home edit_home" onClick="Edit1(this, ${arrayExamens.length + 1})" type="image" src="/img/edit.jpg">
     <input class="optionsTable_home delete_home" onClick="Delete1(this)" type="image" src="/img/delete.jpg">`;
     document.getElementById('difficulty1').focus();
 
 
 
+        arrayExamens.push({
+            difficulty: data.difficulty1,
+            name: data.name1,
+            date: data.date1,
+            id: arrayExamens.length + 1,
+            isdefault: data.isdefault
+        });
+        localStorage.setItem('arrayExamens', JSON.stringify(arrayExamens));
 
 
+    // if(localStorage.getItem('arrayExamens')){
+    //     console.log('existe');
+    //     let hola = JSON.parse(localStorage.getItem('arrayExamens')); // Change the function name
+    //     arrayExamens = hola;
+    //     console.log(hola);
 
-
-    if(localStorage.getItem('arrayExamens')){
-        console.log('existe');
-        let hola = JSON.parse(localStorage.getItem('arrayExamens')); // Change the function name
-        arrayExamens = hola;
-        console.log(hola);
-
-        if(!data.isdefault){
-            arrayExamens.push({
-                difficulty: data.difficulty1,
-                name: data.name1,
-                date: data.date1
-            });
+    //     if(!data.isdefault){
+    //         arrayExamens.push({
+    //             difficulty: data.difficulty1,
+    //             name: data.name1,
+    //             date: data.date1
+    //         });
     
-            localStorage.setItem('arrayExamens', JSON.stringify(arrayExamens));
-        }
-    } else{
-        // console.log(arrayExamens);
-        console.log('no existe');
-        if(!data.isdefault){
-            arrayExamens.push({
-                difficulty: data.difficulty1,
-                name: data.name1,
-                date: data.date1
-            });
+    //         localStorage.setItem('arrayExamens', JSON.stringify(arrayExamens));
+    //     }
+    // } else{
+    //     // console.log(arrayExamens);
+    //     console.log('no existe');
+    //     if(!data.isdefault){
+    //         arrayExamens.push({
+    //             difficulty: data.difficulty1,
+    //             name: data.name1,
+    //             date: data.date1
+    //         });
     
-            localStorage.setItem('arrayExamens', JSON.stringify(arrayExamens));
-        }
+    //         localStorage.setItem('arrayExamens', JSON.stringify(arrayExamens));
+    //     }
 
-    }
+    // }
 
+    
 
 
 
@@ -287,7 +327,7 @@ function InsertData2(data) {
     let difficulty = document.createElement('difficulty');
 
     if(data.difficulty2 === "Fàcil"){
-        difficulty.style.backgroundColor = 'green';
+        difficulty.style.backgroundColor = '#54B435';
     } else if(data.difficulty2 === "Mig"){
         difficulty.style.backgroundColor = 'orange';
     } else if(data.difficulty2 === "Difícil"){
@@ -310,7 +350,7 @@ function InsertData3(data) {
     let difficulty = document.createElement('difficulty');
 
     if(data.difficulty3 === "Fàcil"){
-        difficulty.style.backgroundColor = 'green';
+        difficulty.style.backgroundColor = '#54B435';
     } else if(data.difficulty3 === "Mig"){
         difficulty.style.backgroundColor = 'orange';
     } else if(data.difficulty3 === "Difícil"){
@@ -349,7 +389,7 @@ function Empty3() {
 }
 
 
-function Edit1(td) {
+function Edit1(td, id) {
     show_addEvent('examens');
     Row1 = td.parentElement.parentElement;
 
@@ -359,6 +399,8 @@ function Edit1(td) {
 
     let submit_name = document.getElementById('submit1');
     submit_name.innerHTML = 'Actualitzar';
+
+    document.getElementById('idExample1').value = id;
 }
 function Edit2(td) {
     show_addEvent('projectes');
@@ -397,6 +439,17 @@ function Update1(DataForm1) {
     Row1.cells[2].innerHTML = DataForm1.date1;
 
     document.getElementById('difficulty1').focus();
+
+
+    let id = parseInt(document.getElementById('idExample1').value);
+    arrayExamens.forEach((elem) => {
+        if(elem.id === id){
+            elem.difficulty = DataForm1.difficulty1;
+            elem.name = DataForm1.name1;
+            elem.date = DataForm1.date1;
+        }
+    })
+    localStorage.setItem('arrayExamens', JSON.stringify(arrayExamens));
 }
 function Update2(DataForm2) {
     let bgcolor = '';
