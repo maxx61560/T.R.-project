@@ -8,7 +8,13 @@ function help(){
 
 
 //Database:
-const database = [['maxvilaruiz123@gmail.com', 'Example', 'Max']];
+let database;
+if(localStorage.getItem('database')){
+    database = JSON.parse(localStorage.getItem('database'));
+} else{
+    database = [''];
+}
+
 
 
 //Log in code:
@@ -30,7 +36,7 @@ submit.addEventListener('click', function (e) {
             }
         }
         if (verify) {
-            alert("El correu electrònic o la contrasenya no són correctes. Si us plau, torna-ho a intentar.\nSi has tingut algun error en iniciar sessió, notifica-ho al correu 'maxvilaruiz123@gmail.com'.")
+            alert("El correu electrònic o la contrasenya no són correctes. Si us plau, torna-ho a intentar.\nSi has tingut algun error en iniciar sessió, notifica-ho al correu: 'maxvilaruiz123@gmail.com'.")
         }
     } else{
         alert('Has de completar tots els camps.');

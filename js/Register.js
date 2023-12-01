@@ -7,8 +7,15 @@ function help(){
 
 
 
-//Database:
-const database = [['maxvilaruiz123@gmail.com', 'Exemple', 'Max']];
+// Database:
+let database;
+if (localStorage.getItem('database')) {
+    database = JSON.parse(localStorage.getItem('database'));
+} else {
+    database = [''];
+}
+console.log(database);
+
 
 
 //Register code:
@@ -22,20 +29,25 @@ submit.addEventListener('click', function (e) {
     let email = document.querySelector('#email');
     let password = document.querySelector('#password');
     let password2 = document.querySelector('#password2');
-    let result = `, ['${email.value}', '${password.value}', '${name.value}']`;
+    let result = [email.value, password.value, name.value];
 
     if(name.value !== '' & email.value !== '' & password.value !== '' & password2.value !== ''){ //To make sure all the inputs have values.
         for(let i = 0; i < database.length; i++){ 
             if(email.value !== database[i][0]){ //To find if the email is already being used.
                 if(password.value === password2.value){ //To confirm that both passwords are equals.
-                    alert(`Perfecte! Per acabar, envia la següent informació al correu electrònic 'maxvilaruiz123@gmail.com': \n\n${result}`);
+                    // alert(`Perfecte! Per acabar, envia la següent informació al correu electrònic 'maxvilaruiz123@gmail.com': \n\n${result}`);
+                    console.log('c');
+                    database.push(result);
+                    localStorage.setItem('database', JSON.stringify(database));
                     localStorage.setItem('user_name', name.value); //To put the name of the user in the 'Home' welcome.
                     window.location.href = 'Home.html';
                     break;
                 } else{
+                    console.log('error a');
                     verify_pw = true;
                 }
             } else{
+                console.log('error a');
                 verify_email = true;
             }
         }
